@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 export default async ({ req: { cookies = {} } }) => {
-  let user = {};
+  let user = false;
   const token = cookies["connect.sid"];
 
   try {
@@ -16,6 +16,14 @@ export default async ({ req: { cookies = {} } }) => {
   } catch (e) {
     console.error(e);
   }
+
+  const obj = { props: { user } };
+
+  if (!user)
+    obj.redirect = {
+      permanent: false,
+      destination: "/401",
+    };
 
   return {
     props: {
