@@ -1,7 +1,10 @@
 {
-  "name": "nextjs-passport",
-  "version": "0.1.0",
-  "private": true,
+  "name": "baseapp-backend-next-passport",
+  "version": "1.0.0",
+  "author": {
+    "name": "Agustin Quetto",
+    "email": "agustinquetto@gmail.com"
+  },
   "scripts": {
     "dev": "BACKEND_URL=http://localhost:3000 PORT=3001 next dev",
     "build": "next build",
